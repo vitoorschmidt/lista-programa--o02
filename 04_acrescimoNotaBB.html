@@ -1,20 +1,23 @@
-<meta charset="UTF-8" />
 <script>
-    // Um professor instituiu o programa BB na sua disciplina. Nesse programa, um aluno com notas melhores (o big brother) “adota” um 
-    //aluno com dificuldades (o little brother) e o ajuda a aprender, em troca de um incentivo em sua nota, que é dado em função de quanto ele ajudou 
-    //o seu colega a melhorar o próprio resultado. Esse programa recebe a nota do little brother antes de receber ajuda, e a sua nota depois que o 
-    //big brother o ajudou, e retorna o acréscimo que o big brother receberá em sua nota pela ajuda. O acréscimo é de 1/4 da diferença das notas, 
-    //se for positivo.
+    /*
+    //PROBLEMA
+    Um professor instituiu o programa BB na sua disciplina.
+    Nesse programa, um aluno com notas melhores (o big brother) “adota” um aluno com dificuldades (o little brother) e o ajuda a aprender,
+    em troca de um incentivo em sua nota, que é dado em função de quanto ele ajudou o seu colega a melhorar o próprio resultado.
+    Esse programa recebe a nota do little brother antes de receber ajuda, e a sua nota depois que o big brother o ajudou,
+    e retorna o acréscimo que o big brother receberá em sua nota pela ajuda. O acréscimo é de 1/4 da diferença das notas, se for positivo.
+    */
+    // entrada
+    const notaAntes = Number(prompt(`Informe sua nota no inicio do programa`).replace(",", "."));
+    const nota = Number(prompt(`Informe sua nota no final do programa`).replace(",", "."))
 
-    const primeiraNota = prompt(`Primeira Nota do little brother:`);
-    const segundaNota = prompt(`Segunda nota do little brother:`);
-    const adicional = (segundaNota - primeiraNota) / 4
-
-    if(segundaNota => primeiraNota) {
-    alert(`O aluno conseguiu aumentar sua nota!`);
-    alert(`O aumento do Big Brother foi de ${adicional}`);
+    // processamento
+    if (nota - notaAntes > 0) {
+        const acrescimo = (nota - notaAntes) / 4;
+        alert(`O acréscimo de nota recebido pelo BB será ${acrescimo.toFixed(2)}`)
     }
-    else
-    alert(`Infelizmente o Little Brother não conseguiu aumentar sua nota`);
-
+    else {
+        alert(`Não houve melhoria na nota`)
+    }
+    //saída
 </script>
