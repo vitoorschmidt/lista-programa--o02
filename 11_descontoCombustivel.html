@@ -14,5 +14,26 @@
     calcule e imprima o valor a ser pago pelo cliente sabendo-se que o preço do litro da gasolina é R$ 6,50 o preço do litro do álcool é R$ 6,10.
     */
 
-    
+    const litros = Number(prompt(`Insira a quantidade de litros vendidos`).trim());
+    const combustivel = prompt(`Insira o tipo de combústivel utilizado (A-álcool ou G-gasolina)`).toUpperCase();
+    let total = 0;
+
+    if(combustivel == "A") {
+
+        if(litros <= 20)
+        total = (litros * 6.10) * 0.97
+
+        else if(litros > 20)
+        total = (litros * 6.10) * 0.95
+    }
+    if(combustivel == "G") {
+
+        if(litros <= 20)
+        total = (litros * 6.50) * 0.96
+
+        else if(litros > 20)
+        total = (litros * 6.50) * 0.94
+}
+    alert(`O valor a ser pago pelo cliente é de R$${total.toFixed(2)}`);
+
 </script>

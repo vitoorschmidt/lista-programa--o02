@@ -1,20 +1,53 @@
 <script>
-    /*
-    //PROBLEMA
-    Faça um script que leia 2 números e em seguida pergunte ao usuário qual operação ele deseja realizar. O resultado da operação deve ser acompanhado de uma 
-    frase que diga se o número é:
-    - par ou ímpar;
-    - positivo ou negativo;
-    - inteiro ou decimal.
-    */
+   /*
+   //PROBLEMA
+   Faça um script que leia 2 números e em seguida pergunte ao usuário qual operação ele deseja realizar. 
+   O resultado da operação deve ser acompanhado de uma frase que diga se o número é:
+   - par ou ímpar;
+   - positivo ou negativo;
+   - inteiro ou decimal.
+   */
 
-    //ENTRADA
+   //ENTRADA
+   const numero = Number(prompt(`Insira um numero:`).trim().replace(",", "."));
+   const numero2 = Number(prompt(`Insira um numero:`).trim().replace(",", "."));
+   const operacao = prompt(`Qual operação você deseja realizar? (M-multiplicação, D-divisão, S-subtração e A-adição)`).toUpperCase();
+   let resultado = 0;
 
+   if (operacao == "M") {
+       resultado = numero * numero2
+   }
+   else if (operacao == "D") {
+       resultado = numero / numero2
+   }
+   else if (operacao == "S") {
+       resultado = numero - numero2
+   }
+   else if (operacao == "A") {
+       resultado = numero + numero2
+   }
 
-    //PROCESSAMENTO
-
-    
-    //SAÍDA
-
-
+   if (operacao == "M" || operacao == "D" || operacao == "S" || operacao == "A") {
+       if (resultado % 2 != 0) {
+           alert(`O número é ímpar!`);
+       }
+       else {
+           alert(`O número é par!`);
+       }
+       if (resultado > 0) {
+           alert(`O número é positivo!`);
+       }
+       else {
+           alert(`O número é negativo!`);
+       }
+       if (resultado % 1 > 0) {
+           alert(`O número é decimal!`);
+       }
+       else {
+           alert(`O número é inteiro!`);
+       }
+   }
+   else {
+       alert(`Operação Inválida!`);
+   }
 </script>
