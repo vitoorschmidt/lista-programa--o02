@@ -8,8 +8,8 @@
     e retorna o acréscimo que o big brother receberá em sua nota pela ajuda. O acréscimo é de 1/4 da diferença das notas, se for positivo.
     */
    
-    const notaLittleBrother = Number(prompt("Insira a nota do little brother antes da ajuda:"));
-    const notaLittleBrotherAposAjuda = Number(prompt("Insira a nota do little brother depois da ajuda:"));
+    const notaLittleBrother = Number(prompt("Insira a nota do little brother antes da ajuda:").trim().replace(",","."));
+    const notaLittleBrotherAposAjuda = Number(prompt("Insira a nota do little brother depois da ajuda:").trim().replace(",","."));
     const diferencaNotas = notaLittleBrotherAposAjuda - notaLittleBrother;
 
     if (diferencaNotas > 0) {
